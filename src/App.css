@@ -323,7 +323,11 @@ background-color: rgb(117, 173, 207);
 .RegBtn:hover{
   box-shadow: 2px 2px 2px black;
 }
-
+.Logoutbtn{
+  border: none;
+  background-color: transparent;
+  text-shadow: 2px 2px 2px grey;
+}
 
 /* MOBILE View------------ */
 @media screen and (min-width:350px) and (max-width:600px) {

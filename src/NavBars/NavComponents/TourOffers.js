@@ -1,7 +1,31 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import SlideSlider from '../../Slider'
-
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 const TourOffers = () => {
+  const navigate=useNavigate()
+  useEffect(()=>{
+    const token=localStorage.getItem('token')
+    console.log(token);
+    if(!token){
+      navigate('/login')
+    alert('You have not logged in..')
+    }
+    else{
+      axios.get('https://indiatourismbknd.onrender.com/pages/TourOffers',{
+        headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      }
+      },[navigate])
+
   return (
     <div className='HomeWrapper'>
     <div className='Slider'>

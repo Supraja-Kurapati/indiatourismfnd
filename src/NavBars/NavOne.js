@@ -1,11 +1,18 @@
 import React from 'react'
 // import userIcon from './NavComponents/Images/8380015.jpg'
 import { NavLink, useNavigate } from 'react-router-dom'
+
 const NavOne = () => {
   const navigate=useNavigate()
   const handleNavigation=()=>{
     navigate('/')
   }
+  const handleLogout=()=>{
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+  const checkToken=localStorage.getItem('token')
+
   return (
     <div className='NavOneWrapper'>
      <div className='ParentNav'>
@@ -22,10 +29,10 @@ const NavOne = () => {
 
             </div>  
             <div>
-
+{checkToken?(      <button onClick={handleLogout} className='Logoutbtn Font-medium'>Logout</button>):
               <NavLink to='/login'><img src= 'https://www.magnolia-cms.com/dam/jcr:46c84a0f-54ce-456c-a93b-e3a8cb2d3d0f/User-avatar.png' alt='User' id='UserImg'/>
               </NavLink>
-              
+}   
               </div>     
 
      </div>
