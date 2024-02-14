@@ -1,6 +1,6 @@
 import React from 'react'
 // import userIcon from './NavComponents/Images/8380015.jpg'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 const NavOne = () => {
   const navigate=useNavigate()
   const handleNavigation=()=>{
@@ -21,7 +21,12 @@ const NavOne = () => {
             <img src='https://www.theindiatourism.com/images/india.webp' alt='Contact' id='contImg' onClick={() => window.open('tel:+91 630-982-1337')}/>:   6309821337</div>
 
             </div>  
-            <div><img src= 'https://www.magnolia-cms.com/dam/jcr:46c84a0f-54ce-456c-a93b-e3a8cb2d3d0f/User-avatar.png' alt='User' id='UserImg'/></div>     
+            <div>
+
+              <NavLink to='/login'><img src= 'https://www.magnolia-cms.com/dam/jcr:46c84a0f-54ce-456c-a93b-e3a8cb2d3d0f/User-avatar.png' alt='User' id='UserImg'/>
+              </NavLink>
+              
+              </div>     
 
      </div>
     </div>

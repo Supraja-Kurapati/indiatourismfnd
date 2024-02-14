@@ -16,7 +16,7 @@ const NavComponents = () => {
         <NavLink to='/PlacesToVisit'>Places To Visit</NavLink>
         <NavLink to='/TourOffers'>Tour Offers</NavLink>
         <NavLink to='/ContactUs'>Contact US</NavLink> 
-        <NavLink to='/login'>Account</NavLink>
+        {/* <NavLink to='/login'>Account</NavLink> */}
     </div>
 {/* For Mobile View down */}
 <>
