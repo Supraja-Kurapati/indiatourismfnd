@@ -9,7 +9,7 @@ const Register = () => {
     
     const handleRegister=()=>{
         try{
-        const res=axios.post('https://indiatourismbknd.onrender.com/register',{firstname,lastname,email,password})
+        const res=axios.post('https://indiatourismbknd.onrender.com/pages/register',{firstname,lastname,email,password})
         .then((res)=>{
             console.log(res.data,"User Registered Data")
             if(res.data.msg==="Email Already Exist"){
