@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 const Register = () => {
     const [firstname,setFirstname]=useState('')
     const [lastname,setLastname]=useState('')
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     
+    const navigate=useNavigate()
     const handleRegister=()=>{
         try{
         const res=axios.post('https://indiatourismbknd.onrender.com/pages/register',{firstname,lastname,email,password})
@@ -19,7 +21,7 @@ const Register = () => {
                 localStorage.setItem("token",res.data.token)
                 setTimeout(async() => {
                   alert("user Registered successfully")
-                //   await  navigate('/')
+                  await  navigate('/')
                 }, 2000);
             }
         })
