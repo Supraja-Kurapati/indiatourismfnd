@@ -1,38 +1,432 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat Alternates", sans-serif;
+
+}
+.Font-Small{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.Font-medium{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+
+}
+body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+b{
+  color: brown;
+  font-size: large;
+  font-weight: bold;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.NavOneWrapper{
+  height: 12vh;
+  width: 100vw;
+  display: flex;
+  /* border: 1px solid black; */
+}
+.ParentNav{
+  display: flex;
+  width: 98vw;
+   margin: auto auto; 
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navimg{
+  height: 50px;
+  margin: 10px;
+}
+.emailandCont{
+  height: 12vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 20px;
+  font-size: small;
+}
+#contImg{
+  height: 25px;
+  width: 25px;
+  margin-left: 15px;
+}
+#UserImg{
+  height: 30px;
+  width: 30px;
+}
+.ContactNav{
+  display: flex;
+}
+p{
+  font-family: 'MontserratAlternates';
+}
+.NavtwoWrapper{
+  height: 40px;
+  width: 100vw;
+border: 1px solid rgb(141, 26, 26);
+background-color: brown;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.NavtwoWrapper a{
+text-decoration: none;
+color: white;
+font-weight: bold;
+font-size: medium;
+text-shadow: -2px -2px black;
+}
+.NavTwoMobile{
+  height: 200px;
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.HomeWrapper{
+  width: 100vw;
+  border: 2px solid black;
+  padding: 10px;
+}
+.Slider{
+  height: 415px;
+  width: 100vw;
+}
+.EntireTextWrapper{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  word-wrap: break-word;
+}
+.TotalTextContainer{
+  width: 82vw;
+  margin: auto auto;
+}
+h2{
+  font-size: medium;
+  margin: 10px;
+}
+h2 a{
+  color: black;
+}
+h3{
+  margin: 10px;
+  border-bottom: 1px dashed grey;
+}
+  .justify{
+    text-align: justify;
   }
+.packagesWrapper{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  margin: 10px;
+}
+.ParentContainer{
+  display: flex;
+  margin: auto auto;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.FollowsImgs a{
+  text-decoration: none;
+}
+.FooterWrapper{
+  background-color: rgb(240, 234, 234);
+  width: 100vw;
+  height: auto;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.BigImg{
+  display: flex;
+  flex-direction: column;
+}
+#BigImg{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parentSlider{
+ width: 100vw;
+ margin: auto auto;
+ }
+
+.Sliding{
+  height: 400px;
+  width: 99vw;
+  margin: auto auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ChildSliding{
+  width: 98%;
+  margin: auto auto;
+}
+.slick-prev, .slick-next {
+background-color: grey;
+color: black;
+}
+.LoginWrapper{
+  height: 68vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border: 1px solid black;
+}
+
+#LoginIMG{
+  height: 100%;
+  width: 100%;
+  grid-column: 1/2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.LoginDetailsWrapper{
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+}
+.DetailsBox{
+  height: 100%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px 2px 2px  lightgrey;
+  border-radius: 10px;
+  background-image: linear-gradient( rgb(167, 61, 61),white);
+}
+.DetailsBox input[type=email] {
+height: 70px;
+width: 300px;
+margin: auto auto;
+border-radius: 10px;
+text-align: center;
+border: 1px solid grey;
+margin-top: 10px;
+}
+.DetailsBox input[type=password]{
+  height: 70px;
+width: 300px;
+margin: auto auto;
+border-radius: 10px;
+text-align: center;
+border: 1px solid grey;
+
+}
+.LoginBtn{
+  height: 50px;
+  width: 200px;
+  font-size: medium;
+  font-weight: bold;
+  margin: auto auto;
+  border-radius: 20px;
+  background-color: rgb(192, 31, 31);
+border: 1px solid white;
+color: white;
+}
+.LoginBtn:hover{
+box-shadow: 2px 2px 2px darkgray;
+}
+.RegisterWrapper{
+  height: 70vh; 
+  width: 100vw;
+  background-image: url(https://www.drishtiias.com/images/blogs/indian-tourism-blog-ias-01.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.RegDetailsWrapper{
+  height: 420px;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+}
+.form{
+  height: 420px;
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset -5px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  margin-top: 50px; 
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.form input[type=text]{
+  width: 300px;
+  height: 50px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.form input[type=email]{
+  width: 300px;
+  height: 50px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  color: black;
+
+}
+.form input[type=password]{
+  width: 300px;
+  height: 50px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: transparent;
+  color: black;
+
+}
+.RegBtn{
+  height: 50px;
+  width: 200px;
+  font-size: medium;
+  font-weight: bold;
+  margin: auto auto;
+  border-radius: 20px;
+background-color: rgb(117, 173, 207);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.RegBtn:hover{
+  box-shadow: 2px 2px 2px black;
+}
+
+
+/* MOBILE View------------ */
+@media screen and (min-width:350px) and (max-width:600px) {
+  body{
+    width: 100%;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+  .NavOneWrapper{
+    height: 25vh;
   }
+.ParentNav{
+  flex-direction: column;
+} 
+.Font-Small{
+  font-weight: 400;
+  font-size: x-small;
+}
+.navimg{
+  height: 30px;
+  margin: 5px;
+  display: block;
+}
+.emailandCont{
+  width: 100%;
+padding-top: 0px;
+align-items: center;
+}
+#contImg{
+  margin-left: 0px;
+
+}
+.HamburgerWrapper{
+  height: 40px;
+  width: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+.HamburgericonWrapper{
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.burger{
+  width: 40px;
+  background-color: black;
+  height: 5px;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+  .NavtwoWrapper{
+  display: none;
+  }
+
+  .NavTwoMobile{
+    display: flex;
+    height: 180px;
+    flex-direction: column;
+    margin: 15px;
+    background-color: greenyellow;
+  }
+  .NavTwoMobile a{
+  text-decoration: none;
+  font-weight: bold;
+  color: Black;
+  }
+  .navRoutes{
+    margin-bottom: 10px;
+  }
+  .ParentContainer{
+    padding: auto auto;
+    flex-direction: column;
+    margin: 20px;
+  }
+  .FooterWrapper{
+    flex-direction: column;
+  }
+  .leftSide{
+    margin: 10px;
+  }
+  .FollowsImgs{
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+
+
+/* Tablet View */
+@media screen and (min-width:600px) and (max-width:
+1024px) {
+  .FooterWrapper{
+    flex-direction: column;
+  }
+  .leftSide{
+    margin: 10px;
+  }
+  .FollowsImgs{
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
 }
