@@ -23,7 +23,7 @@ const NavRoutes = () => {
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
 
-    <Route path='/stateIndividual' element={<Stateindividual/>}/>
+    <Route path='/stateIndividual/:id' element={<Stateindividual/>}/>
     </Routes>
 
     </div>

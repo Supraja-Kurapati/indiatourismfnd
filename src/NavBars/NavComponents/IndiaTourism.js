@@ -39,14 +39,17 @@ India Tourism, <b>Himachal Pradesh, Kerala, Goa, Madhya Pradesh, Gujarat, Mahara
   <div className='EntireCardWrapper'>
   {
   TData.map((item)=>(
+  
     <div key={item.id} className='CardWrapper'>
-      {/* <NavLink to={`/stateIndividual/${item.id}`}> */}
-<NavLink to='/stateIndividual'>
+      <NavLink to={`/stateIndividual/${item.id}`}>
+{/* <NavLink to='/stateIndividual'> */}
+
       <img src={item.imagesrc} alt='Not Found' className='CardImgWrapper'/>
       <h2 className='Font-vSmall'>{item.heading}</h2>
       </NavLink>
       {/* </NavLink> */}
       </div> 
+      
   ))
  }
   </div>     

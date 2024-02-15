@@ -1,14 +1,20 @@
 import React,{useEffect,useState} from 'react'
 import SlideSlider from '../Slider'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 const Stateindividual = () => {
+
+  const individualid=useParams().id;
+
     const [TData,setTData]=useState([])
+// console.log(individualid);
 
     useEffect(()=>{
       const fetchData=async()=>{
         try{
           const response=await axios.get('https://indiatourismbknd.onrender.com/pages/tourPacakges')
           setTData(response.data)
+          // console.log(response.data);
         }
         catch(err){
           console.log(err);
@@ -16,6 +22,7 @@ const Stateindividual = () => {
       }
       fetchData()
     },[])
+    
   
   return (
     <div className='HomeWrapper'>
@@ -27,27 +34,26 @@ const Stateindividual = () => {
       <div className='TotalTextContainer'>
 
     <div>
+      
           {
-  TData.map((item)=>(
+  // TData.map((item)=>(
+    TData.filter((item)=>item.id===parseInt(individualid)).map((item,index)=>(
+
+
     <div key={item.id}>
         <h3>{item.heading}</h3>
         <p className='justify Font-Small'>
         {item.pone}
         <br/>
-        <br/>
         {item.ptwo}
         <br/>
-        <br/>
         {item.pthree}
-
-        <br/>
         <br/>
         <h2><b>History</b></h2>
         {item.history}
         <br/>
-        <br/>
         {item.historytwo}
-        <br/><br/>
+        <br/>
         <h2><b>Fairs & Festivals</b></h2>
         {item.fairs}
         <br/>
@@ -82,6 +88,7 @@ const Stateindividual = () => {
         </p>
         </div>
   )
+
   )
 }
     </div>
