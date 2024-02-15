@@ -7,7 +7,7 @@ const Stateindividual = () => {
     useEffect(()=>{
       const fetchData=async()=>{
         try{
-          const response=await axios.get('http://localhost:5031/pages/tourPacakges')
+          const response=await axios.get('https://indiatourismbknd.onrender.com/pages/tourPacakges')
           setTData(response.data)
         }
         catch(err){
