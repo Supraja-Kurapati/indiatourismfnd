@@ -8,6 +8,7 @@ import TourOffers from './TourOffers'
 import ContactUs from './ContactUs'
 import Login from './Login'
 import Register from './Register'
+import Stateindividual from '../../StatesPage/Stateindividual'
 
 const NavRoutes = () => {
   return (
@@ -21,6 +22,8 @@ const NavRoutes = () => {
     <Route path='/ContactUs' element={<ContactUs/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Register/>}/>
+
+    <Route path='/stateIndividual' element={<Stateindividual/>}/>
     </Routes>
 
     </div>

@@ -14,7 +14,13 @@
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 600;
   font-style: normal;
-
+}
+.Font-vSmall{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: small;
+ 
 }
 body{
   width: 100vw;
@@ -328,7 +334,39 @@ background-color: rgb(117, 173, 207);
   background-color: transparent;
   text-shadow: 2px 2px 2px grey;
 }
+.EntireCardWrapper{
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.EntireCardWrapper a{
+  text-decoration: none;
+  color: black;
+}
+.CardWrapper{
+  height: 190px;
+  width: 260px;
+  border: 1px solid lightgray;
+  background-color: rgb(238, 237, 237);
+  margin: 10px;
+}
+.CardWrapper:hover{
+box-shadow: 2px 2px 5px 10px lightgrey;
+cursor: pointer;
+}
+.CardImgWrapper{
+  height: 150px;
+  width: 250px;
+  margin: auto auto;
 
+}
+.reach{
+  height: 40px;
+  width: 40px;
+}
 /* MOBILE View------------ */
 @media screen and (min-width:350px) and (max-width:600px) {
   body{

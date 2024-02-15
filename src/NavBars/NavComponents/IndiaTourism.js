@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import SlideSlider from '../../Slider'
+import axios from 'axios'
+ import { NavLink } from 'react-router-dom'
 
 const IndiaTourism = () => {
+  const [TData,setTData]=useState([])
+
+  useEffect(()=>{
+    const fetchData=async()=>{
+      try{
+        const response=await axios.get('http://localhost:5031/pages/tourPacakges')
+        setTData(response.data)
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    fetchData()
+  },[])
   return (
     <div className='HomeWrapper'>
       <div className='Slider'>
@@ -18,7 +34,24 @@ India Tourism, <b>Himachal Pradesh, Kerala, Goa, Madhya Pradesh, Gujarat, Mahara
  When the sun starts shining brightly, people throng the picturesque hill stations with snow-laden peaks. A perfect escape from the scorching heat and soaring temperature can be found only in India.
 
   </p>
+
+
+  <div className='EntireCardWrapper'>
+  {
+  TData.map((item)=>(
+    <div key={item.id} className='CardWrapper'>
+      {/* <NavLink to={`/stateIndividual/${item.id}`}> */}
+<NavLink to='/stateIndividual'>
+      <img src={item.imagesrc} alt='Not Found' className='CardImgWrapper'/>
+      <h2 className='Font-vSmall'>{item.heading}</h2>
+      </NavLink>
+      {/* </NavLink> */}
+      </div> 
+  ))
+ }
+  </div>     
 </div>
+
 </div>
     </div>
   )
