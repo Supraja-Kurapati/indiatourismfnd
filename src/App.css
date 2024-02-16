@@ -354,6 +354,18 @@ background-color: rgb(117, 173, 207);
   background-color: rgb(238, 237, 237);
   margin: 10px;
 }
+.smallCard{
+  height: 190px;
+  border: 1px solid lightgray;
+  background-color: rgb(238, 237, 237);
+  margin: 10px;
+
+  width: 160px;
+}
+.CardsmallImgWrapper{
+  width: 150px;
+  height: 130px;
+}
 .CardWrapper:hover{
 box-shadow: 2px 2px 5px 10px lightgrey;
 cursor: pointer;

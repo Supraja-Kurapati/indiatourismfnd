@@ -98,13 +98,13 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
   <div className='packagesWrapper'>
   <div className='EntireCardWrapper'>
   {
-  PData.filter((item)=>item.id%9===2).map((item)=>(
-    <div key={item.id} className='CardWrapper'>
-    <NavLink to={`/stateIndividual/${item.id}`} target="_blank">
+  PData.filter((e)=>e.id%6===0).map((place)=>(
+    <div key={place.id} className='smallCard'>
+    <NavLink to={`/placesofstate/${place.id}`} target="_blank">
 {/* <NavLink to='/stateIndividual'> */}
 
-    <img src={item.imagesrc} alt='Not Found' className='CardImgWrapper'/>
-    <h2 className='Font-vSmall'>{item.heading}</h2>
+    <img src={place.imagesrc} alt='Not Found' className='CardsmallImgWrapper'/>
+    <h2 className='Font-vSmall'>{place.place}</h2>
     </NavLink>
     {/* </NavLink> */}
     </div> 
