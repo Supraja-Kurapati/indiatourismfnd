@@ -1,15 +1,16 @@
 import React,{useEffect,useState} from 'react'
 import SlideSlider from '../Slider'
 import axios from 'axios'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useLocation, useParams } from 'react-router-dom'
 const Stateindividual = () => {
-
+const location=useLocation();
   const individualid=useParams().id;
 
     const [TData,setTData]=useState([])
 //places of everyindividual Tourism
 const [PData,setPData]=useState([])
 useEffect(()=>{
+  window.scrollTo(0,0)
   const getData=async()=>{
     try{
       const response=await axios.get('https://indiatourismbknd.onrender.com/pages/places')
@@ -20,7 +21,7 @@ useEffect(()=>{
     }
   }
   getData()
-},[])
+},[location.pathname])
 
 
 // console.log(individualid);

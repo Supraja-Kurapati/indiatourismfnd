@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from 'react'
  import SlideSlider from '../../Slider'
  import axios from 'axios'
- import { NavLink } from 'react-router-dom'
+ import { NavLink, useLocation } from 'react-router-dom'
 
 const Home = () => {
   const [TData,setTData]=useState([])
-
+const location=useLocation();
   useEffect(()=>{
+    window.scrollTo(0,0)
     const fetchData=async()=>{
       try{
         const response=await axios.get('https://indiatourismbknd.onrender.com/pages/packages')
@@ -17,7 +18,7 @@ const Home = () => {
       }
     }
     fetchData()
-  },[])
+  },[location.pathname])
 
   const [PData,setPData]=useState([])
 useEffect(()=>{

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import axios from 'axios';
 import SlideSlider from '../Slider';
 const PlacesofState = () => {
     const individualid=useParams().id;
     const [PData,setPData]=useState([])
+    const location=useLocation()
     useEffect(()=>{
+      window.scrollTo(0,0)
         const fetchData=async()=>{
             try{
                 const response=await axios.get('https://indiatourismbknd.onrender.com/pages/places')
@@ -16,7 +18,7 @@ const PlacesofState = () => {
             }
         }
         fetchData()
-    },[])
+    },[location.pathname])
   return (
     <div className='HomeWrapper'>
     <div className='Slider'>

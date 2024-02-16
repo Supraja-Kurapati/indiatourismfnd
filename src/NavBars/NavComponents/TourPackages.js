@@ -31,7 +31,7 @@ const TourPackages = () => {
       useEffect(()=>{
         const fetchData=async()=>{
           try{
-            const response=await axios.get('https://www.theindiatourism.com/pages/packages')
+            const response=await axios.get('https://indiatourismbknd.onrender.com/pages/packages')
             setTData(response.data)
           }
           catch(err){
