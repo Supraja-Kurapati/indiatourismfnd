@@ -1,12 +1,28 @@
 import React,{useEffect,useState} from 'react'
 import SlideSlider from '../Slider'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 const Stateindividual = () => {
 
   const individualid=useParams().id;
 
     const [TData,setTData]=useState([])
+//places of everyindividual Tourism
+const [PData,setPData]=useState([])
+useEffect(()=>{
+  const getData=async()=>{
+    try{
+      const response=await axios.get('http://localhost:5031/pages/places')
+      setPData(response.data)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+  getData()
+},[])
+
+
 // console.log(individualid);
 
     useEffect(()=>{
@@ -65,8 +81,8 @@ const Stateindividual = () => {
             <img src='https://www.theindiatourism.com/images/plane.png' alt='Not Found' className='reach'/>
         <h2><b>By Air</b></h2>
         </div>
-{item.byair}
-<div style={{display:'flex'}}>
+     {item.byair}
+     <div style={{display:'flex'}}>
             <img src='https://www.theindiatourism.com/images/train.png' alt='Not Found' className='reach'/>
 
         <h2><b>By Rail</b></h2>
@@ -86,12 +102,30 @@ const Stateindividual = () => {
 
 
         </p>
-        </div>
-  )
+    <div className='EntireCardWrapper'>
+      {
+          PData.map((place)=>(
+            item.heading===place.heading?(
+            <div key={place.id} className='CardWrapper'>
+              <NavLink to={`/placesofstate/${place.id}`}>
+                  <img src={place.imagesrc} alt='Not Found' className='CardImgWrapper'/>
+      <h2 className='Font-vSmall'>{place.place}</h2>
+      </NavLink>
+          {/* {place.place} */}
+          </div>
+            ):null
+          ))
+       }
 
-  )
-}
     </div>
+        </div>
+           )
+
+          )
+           }
+       </div>
+
+
     </div>
 </div>
 </div>
