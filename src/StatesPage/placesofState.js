@@ -8,7 +8,7 @@ const PlacesofState = () => {
     useEffect(()=>{
         const fetchData=async()=>{
             try{
-                const response=await axios.get('http://localhost:5031/pages/places')
+                const response=await axios.get('https://indiatourismbknd.onrender.com/pages/places')
                 setPData(response.data)
             }
             catch(err){
