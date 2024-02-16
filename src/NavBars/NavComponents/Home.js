@@ -5,6 +5,7 @@ import React,{useState,useEffect} from 'react'
 
 const Home = () => {
   const [TData,setTData]=useState([])
+  console.log((TData));
 const location=useLocation();
   useEffect(()=>{
     window.scrollTo(0,0)
@@ -69,27 +70,64 @@ Foreign tourists who fly to India, You are certainly in for a surprise, particul
 
 Travel in India is like nothing you’ve ever experienced, from the magnificence Taj Mahal to the highlights of Kerala, Goa and India, this is a great trip for first-time visitors as it encompasses all of the major tourist destinations.
   </p>
+  <div className='DynamicWrapper'> 
 
-  <div className='packagesWrapper'>
-  <div className='EntireCardWrapper'>
-  {
-  TData.filter((e)=>e.id<9).map((item)=>(
-  
-    <div key={item.id} className='CardWrapper'>
-      {/* <NavLink to={`/stateIndividual/${item.id}`}> */}
-{/* <NavLink to='/stateIndividual'> */}
 
-      <img src={item.img} alt='Not Found' className='CardImgWrapper'/>
-      <h2 className='Font-vSmall'>{item.heading}</h2>
-      {/* </NavLink> */}
-      {/* </NavLink> */}
-      </div> 
-      
-  ))
- }
-  </div>     
+   <div className='CardWrapper'>
+    <NavLink to='/golden' target="_blank">
+   <img src='https://www.theindiatourism.com/images/golden-triangle-tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Golden Triangle Tours</h2>
+   </NavLink>
+   </div>
+   <div className='CardWrapper'>
+   <NavLink to='/shopping' target="_blank">
 
-  </div>
+   <img src='https://www.theindiatourism.com/images/India-Shopping-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>India Shopping Tours</h2>
+   </NavLink></div>
+
+   <div className='CardWrapper'>
+   <NavLink to='/food'>
+
+   <img src='https://www.theindiatourism.com/images/India-Food-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>India Food Tours</h2>
+   </NavLink></div>
+
+   <div className='CardWrapper'>
+    <NavLink to='/north'>
+   <img src='https://www.theindiatourism.com/images/North-India-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>North India Tours</h2>
+   </NavLink></div>
+
+   <div className='CardWrapper'>
+    <NavLink to='/south' target="_blank">
+   <img src='https://www.theindiatourism.com/images/South-India-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>South India Tours</h2>
+   </NavLink> </div>
+
+   <div className='CardWrapper'>
+    <NavLink to='/luxury'>
+   <img src='https://www.theindiatourism.com/images/India-Luxury-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>India Luxury Tours</h2>
+   </NavLink></div>
+
+   <div className='CardWrapper'>
+   <NavLink to='/solo' target="_blank">
+   <img src='https://www.theindiatourism.com/images/Solo-Woman-India-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Solo Woman India Tours</h2>
+   </NavLink></div>
+
+   <div className='CardWrapper'>
+   <NavLink to='/budget'>
+
+   <img src='https://www.theindiatourism.com/images/Budget-Tour-India.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Budget India Tours</h2>
+   </NavLink></div>
+
+
+
+</div>
+
 
   <h3>Find Your Perfect Holiday Destination</h3> 
   <p className='Font-Small justify'>
@@ -121,29 +159,36 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
 Our collection of tour are themed by a style to help you get the most out of your wonderful holiday in India whether you're looking for a small group tour, private tailor made holiday to see India, These packages are meant to cater every of your interest, and that too without hampering your comfort in the travel. The intriguing land of India has so much to explore. 
   </p>
 
-  <div className='packagesWrapper'>
-  <div className='EntireCardWrapper'>
-  {
-  TData.filter((e)=>e.id>6).map((item)=>(
-  
-    <div key={item.id} className='CardWrapper'>
-      {/* <NavLink to={`/stateIndividual/${item.id}`}> */}
-{/* <NavLink to='/stateIndividual'> */}
 
-      <img src={item.img} alt='Not Found' className='CardImgWrapper'/>
-      <h2 className='Font-vSmall'>{item.heading}</h2>
-      {/* </NavLink> */}
-      {/* </NavLink> */}
-      </div> 
-      
-  ))
- }
-  </div>     
+  <div className='DynamicWrapper'> 
 
 
-  </div>
+   <div className='CardWrapper'>
+   <NavLink to='/honeymoon'>
+   <img src='https://www.theindiatourism.com/images/india-Honeymoon-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Honey Moon Tours</h2>
+   </NavLink>
+</div>
+<div className='CardWrapper'>
+   <NavLink to='/family'>
+   <img src='https://www.theindiatourism.com/images/Family-Holidays.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Family Holidays Tours</h2>
+   </NavLink></div>
+   <div className='CardWrapper'>
+   <NavLink to='/adventure'>
+
+   <img src='https://www.theindiatourism.com/images/Adventure-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Adventure Tours</h2>
+   </NavLink></div>
+   <div className='CardWrapper'>
+    <NavLink to='/luxury'>
+   <img src='https://www.theindiatourism.com/images/India-Luxury-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>India Luxury Tours</h2>
+   </NavLink></div>
 
 
+
+</div>
 
         </div>
       </div>

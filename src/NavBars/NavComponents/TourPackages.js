@@ -59,7 +59,7 @@ const TourPackages = () => {
 
 
    <div className='CardWrapper'>
-    <NavLink to='/golden'>
+    <NavLink to='/golden' target="_blank">
    <img src='https://www.theindiatourism.com/images/golden-triangle-tours.jpg' alt='Not Found' className='CardImgWrapper'/>
    <h2 className='Font-vSmall'>Golden Triangle Tours</h2>
    </NavLink>
