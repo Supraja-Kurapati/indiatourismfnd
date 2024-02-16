@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-        const response=await axios.get('https://www.theindiatourism.com/pages/packages')
+        const response=await axios.get('https://indiatourismbknd.onrender.com/pages/packages')
         setTData(response.data)
       }
       catch(err){
@@ -23,7 +23,7 @@ const Home = () => {
 useEffect(()=>{
   const getData=async()=>{
     try{
-      const response=await axios.get('https://www.theindiatourism.com/pages/places')
+      const response=await axios.get('https://indiatourismbknd.onrender.com/pages/places')
       setPData(response.data)
     }
     catch(err){
@@ -100,7 +100,7 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
   {
   PData.filter((item)=>item.id%9===2).map((item)=>(
     <div key={item.id} className='CardWrapper'>
-    <NavLink to={`/stateIndividual/${item.id}`}>
+    <NavLink to={`/stateIndividual/${item.id}`} target="_blank">
 {/* <NavLink to='/stateIndividual'> */}
 
     <img src={item.imagesrc} alt='Not Found' className='CardImgWrapper'/>
