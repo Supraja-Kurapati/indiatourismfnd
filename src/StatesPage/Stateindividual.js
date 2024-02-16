@@ -12,7 +12,7 @@ const [PData,setPData]=useState([])
 useEffect(()=>{
   const getData=async()=>{
     try{
-      const response=await axios.get('http://localhost:5031/pages/places')
+      const response=await axios.get('https://www.theindiatourism.com/pages/places')
       setPData(response.data)
     }
     catch(err){

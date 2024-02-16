@@ -1,7 +1,38 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
  import SlideSlider from '../../Slider'
+ import axios from 'axios'
+ import { NavLink } from 'react-router-dom'
 
 const Home = () => {
+  const [TData,setTData]=useState([])
+
+  useEffect(()=>{
+    const fetchData=async()=>{
+      try{
+        const response=await axios.get('https://www.theindiatourism.com/pages/packages')
+        setTData(response.data)
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    fetchData()
+  },[])
+
+  const [PData,setPData]=useState([])
+useEffect(()=>{
+  const getData=async()=>{
+    try{
+      const response=await axios.get('https://www.theindiatourism.com/pages/places')
+      setPData(response.data)
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+  getData()
+},[])
+
   return (
     <div className='HomeWrapper'>
       <div className='Slider'>
@@ -39,7 +70,24 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
   </p>
 
   <div className='packagesWrapper'>
-    Packages from DB
+  <div className='EntireCardWrapper'>
+  {
+  TData.filter((e)=>e.id<9).map((item)=>(
+  
+    <div key={item.id} className='CardWrapper'>
+      {/* <NavLink to={`/stateIndividual/${item.id}`}> */}
+{/* <NavLink to='/stateIndividual'> */}
+
+      <img src={item.img} alt='Not Found' className='CardImgWrapper'/>
+      <h2 className='Font-vSmall'>{item.heading}</h2>
+      {/* </NavLink> */}
+      {/* </NavLink> */}
+      </div> 
+      
+  ))
+ }
+  </div>     
+
   </div>
 
   <h3>Find Your Perfect Holiday Destination</h3> 
@@ -48,7 +96,22 @@ Check out this India most iconic heritage, natural beauty, colourful, cultural a
   </p>
           
   <div className='packagesWrapper'>
-    Packages from DB
+  <div className='EntireCardWrapper'>
+  {
+  PData.filter((item)=>item.id%9===2).map((item)=>(
+    <div key={item.id} className='CardWrapper'>
+    <NavLink to={`/stateIndividual/${item.id}`}>
+{/* <NavLink to='/stateIndividual'> */}
+
+    <img src={item.imagesrc} alt='Not Found' className='CardImgWrapper'/>
+    <h2 className='Font-vSmall'>{item.heading}</h2>
+    </NavLink>
+    {/* </NavLink> */}
+    </div> 
+
+   ) )}
+
+</div>
   </div>
 
   <h3>Choose Your Style of Tour Packages</h3> 
@@ -58,7 +121,25 @@ Our collection of tour are themed by a style to help you get the most out of you
   </p>
 
   <div className='packagesWrapper'>
-    Packages from DB
+  <div className='EntireCardWrapper'>
+  {
+  TData.filter((e)=>e.id>6).map((item)=>(
+  
+    <div key={item.id} className='CardWrapper'>
+      {/* <NavLink to={`/stateIndividual/${item.id}`}> */}
+{/* <NavLink to='/stateIndividual'> */}
+
+      <img src={item.img} alt='Not Found' className='CardImgWrapper'/>
+      <h2 className='Font-vSmall'>{item.heading}</h2>
+      {/* </NavLink> */}
+      {/* </NavLink> */}
+      </div> 
+      
+  ))
+ }
+  </div>     
+
+
   </div>
 
 

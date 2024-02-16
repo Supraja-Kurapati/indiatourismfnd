@@ -133,11 +133,12 @@ h3{
     text-align: justify;
   }
 .packagesWrapper{
-  height: 200px;
+  height: auto;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 10px;
 }
 .ParentContainer{
