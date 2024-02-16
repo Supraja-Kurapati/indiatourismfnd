@@ -1,6 +1,13 @@
 import React from 'react'
 import SlideSlider from '../Slider'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 const BudgetTours = () => {
+  const location=useLocation()
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[location.pathname])
+
   return (
     <div className='HomeWrapper'>
     <div className='Slider'>

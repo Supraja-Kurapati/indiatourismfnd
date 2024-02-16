@@ -1,10 +1,12 @@
 import React,{useEffect} from 'react'
 import SlideSlider from '../../Slider'
 import axios from 'axios'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 const TourPackages = () => {
+  const location=useLocation();
   const navigate=useNavigate()
   useEffect(()=>{
+    window.scrollTo(0,0)
     const token=localStorage.getItem('token')
     console.log(token);
     if(!token){
@@ -24,7 +26,7 @@ const TourPackages = () => {
           console.log(error);
         });
       }
-      },[navigate])
+      },[navigate,location.pathname])
 
       // const [TData,setTData]=useState([])
 
