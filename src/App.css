@@ -119,6 +119,7 @@ text-shadow: -2px -2px black;
   margin: auto auto;
 }
 h2{
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: medium;
   margin: 10px;
 }
@@ -374,12 +375,25 @@ cursor: pointer;
   height: 150px;
   width: 250px;
   margin: auto auto;
-
 }
+
 .reach{
   height: 40px;
   width: 40px;
 }
+.DynamicWrapper{
+  display: flex;
+  width:100%;
+  height: auto;
+  flex-wrap: wrap;
+  margin: auto auto;
+  justify-content: center;
+}
+.CardWrapper a{
+  text-decoration: none;
+  color: black;
+}
+
 /* MOBILE View------------ */
 @media screen and (min-width:350px) and (max-width:600px) {
   body{
