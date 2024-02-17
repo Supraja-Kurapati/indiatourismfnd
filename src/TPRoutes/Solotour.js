@@ -1,10 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,useState} from 'react'
 import SlideSlider from './../Slider'
 import { useLocation } from 'react-router-dom'
+import axios from 'axios'
 const Solotour = () => {
+  const [PData,setPData]=useState([])
+
   const loc=useLocation()
   useEffect(()=>{
     window.scrollTo(0,0)
+    const getData=async()=>{
+      try{
+        const response=await axios.get('https://indiatourismbknd.onrender.com/pages/packs')
+        setPData(response.data)
+        // console.log(response.data);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    getData()
+
   },[loc.pathname])
   return (
     <div className='HomeWrapper'>
@@ -27,6 +42,17 @@ Our women special luxury tours are suitable for women of all ages, from <a href=
 
 	
 </p>
+<div className='EntireCardWrapper'>
+{
+  PData.filter((pack)=>pack.heading.includes('Solo Woman India Tours')).map((pack)=>(
+    <div key={pack.id} className='CardWrapper'>
+
+      <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
+     <h2 className='Font-vSmall'> {pack.head}</h2>
+      </div>
+  ))
+}
+</div>
 </div>
 </div>
 </div>

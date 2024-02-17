@@ -1,9 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SlideSlider from '../Slider'
+import axios from 'axios'
 import { useLocation } from 'react-router-dom'
-const North = () => {
+const North = () => {  const [PData,setPData]=useState([])
+
   const loc=useLocation()
   useEffect(()=>{
+    const getData=async()=>{
+      try{
+        const response=await axios.get('https://indiatourismbknd.onrender.com/pages/packs')
+        setPData(response.data)
+        // console.log(response.data);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    getData()
+
     window.scrollTo(0,0)
   },[loc.pathname])
   return (
@@ -27,6 +41,21 @@ const North = () => {
 	
 	
 </p>
+
+<div className='EntireCardWrapper'>
+
+{
+  PData.filter((pack)=>pack.heading.includes('North India Tours')).map((pack)=>(
+    <div key={pack.id} className='CardWrapper'>
+
+      <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
+     <h2 className='Font-vSmall'> {pack.head}</h2>
+      </div>
+  ))
+}
+</div>
+
+
 </div>
 </div>
 </div>

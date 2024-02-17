@@ -400,6 +400,30 @@ cursor: pointer;
   text-decoration: none;
   color: black;
 }
+.EntirePlacesWrapper{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+flex-wrap: wrap;
+}
+.visitWrapper{
+  height: 350px;
+  width: 260px;
+  border: 1px solid grey;
+  background-color: rgb(230, 228, 228);
+  margin: 10px;
+}
+.visitWrapper h3{
+height: 20px;
+font-size: smaller;
+}
+
+.Dynamiccard{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 /* MOBILE View------------ */
 @media screen and (min-width:350px) and (max-width:600px) {

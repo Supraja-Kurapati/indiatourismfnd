@@ -4,6 +4,8 @@ import axios from 'axios';
 import SlideSlider from '../Slider';
 const PlacesofState = () => {
     const individualid=useParams().id;
+    const [TData,setTData]=useState([])
+
     const [PData,setPData]=useState([])
     const location=useLocation()
     useEffect(()=>{
@@ -19,6 +21,20 @@ const PlacesofState = () => {
         }
         fetchData()
     },[location.pathname])
+    useEffect(()=>{
+      const fetchData=async()=>{
+        try{
+          const response=await axios.get('https://indiatourismbknd.onrender.com/pages/tourPacakges')
+          setTData(response.data)
+          // console.log(response.data);
+        }
+        catch(err){
+          console.log(err);
+        }
+      }
+      fetchData()
+    },[])
+
   return (
     <div className='HomeWrapper'>
     <div className='Slider'>
@@ -29,6 +45,7 @@ const PlacesofState = () => {
       <div className='TotalTextContainer'>
      {
         PData.filter((place)=>place.id===parseInt(individualid)).map((place,index)=>(
+
             <div key={place.id}>
                  <h3>{place.place}</h3>
                  <p className='justify Font-medium'>
@@ -44,19 +61,31 @@ const PlacesofState = () => {
                 <h3>Things to See in {place.heading.replace("Tourism","")}</h3>
 <br/>
 
-                </div>
-        ))
-     }
-     </div>
-{/* {
-    PData.filter((place)=>place.heading===place.heading).map((place)=>
+{
+  // TData.map((item)=>(
+    TData.filter((item)=>item.heading===place.heading).map((item,index)=>(
+<div className='Dynamiccard'>
+{
+    PData.map((place)=>item.heading===place.heading?(
      <div key={place.id} className='CardWrapper'>
      <img src={place.imagesrc} alt='Not Found' className='CardImgWrapper'/>
       <h2 className='Font-vSmall'>{place.place}</h2>
  
 </div>
+    ):null
 )
-} */}
+}
+</div>
+    ))}
+
+                </div>
+        ))
+     }
+     </div>
+
+
+
+
      </div>
 
 
