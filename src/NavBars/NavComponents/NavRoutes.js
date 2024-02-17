@@ -22,6 +22,7 @@ import South from '../../TPRoutes/South'
 import Shopping from '../../TPRoutes/Shopping'
 import FoodTour from '../../TPRoutes/FoodTour'
 import PiliTour from '../../TPRoutes/PiliTour'
+import IndividualTourPack from '../../TPRoutes/IndividualTourPack'
 const NavRoutes = () => {
   return (
     <div>
@@ -50,6 +51,7 @@ const NavRoutes = () => {
     <Route path='/shopping' element={<Shopping/>}/>
     <Route path='/food' element={<FoodTour/>}/>
     <Route path='/pili' element={<PiliTour/>}/>
+    <Route path='/itp/:id' element={<IndividualTourPack/>}/>
     </Routes>
 
     </div>

@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import SlideSlider from '../Slider'
 import { useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 const FoodTour = () => {
   const location=useLocation();
@@ -40,9 +41,11 @@ const FoodTour = () => {
 {
   PData.filter((pack)=>pack.heading.includes('India Food Tours')).map((pack)=>(
     <div key={pack.id} className='CardWrapper'>
+<NavLink to={`/itp/${pack.id}`}>
 
       <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
+     </NavLink>
       </div>
   ))
 }

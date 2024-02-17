@@ -1,10 +1,24 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
+import { NavLink } from 'react-router-dom'
 import SlideSlider from '../../Slider'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 const TourOffers = () => {
+  const [TData,setTData]=useState([])
+
   const navigate=useNavigate()
   useEffect(()=>{
+    const fetchData=async()=>{
+      try{
+        const response=await axios.get('https://indiatourismbknd.onrender.com/pages/tourPacakges')
+        setTData(response.data)
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    fetchData()
+
     const token=localStorage.getItem('token')
     console.log(token);
     if(!token){
@@ -41,6 +55,42 @@ const TourOffers = () => {
 
 
   </p>
+
+  <div className='DynamicWrapper'> 
+  <div className='CardWrapper'>
+   <NavLink to='/pili'>
+   <img src='https://www.theindiatourism.com/images/Pilgrimage-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Piligrimage Tours</h2>
+   </NavLink></div>
+
+
+   {
+  TData.filter((e)=>e.id%8===0).map((item)=>(
+  
+    <div key={item.id} className='CardWrapper'>
+      <NavLink to={`/stateIndividual/${item.id}`}>
+{/* <NavLink to='/stateIndividual'> */}
+
+      <img src={item.imagesrc} alt='Not Found' className='CardImgWrapper'/>
+      <h2 className='Font-vSmall'>{item.heading}</h2>
+      </NavLink>
+      {/* </NavLink> */}
+      </div> 
+      
+  ))
+ }
+   <div className='CardWrapper'>
+   <NavLink to='/adventure'>
+
+   <img src='https://www.theindiatourism.com/images/Adventure-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
+   <h2 className='Font-vSmall'>Adventure Tours</h2>
+   </NavLink></div>
+
+
+
+
+</div>
+
 </div>
 </div>
 </div>

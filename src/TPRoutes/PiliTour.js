@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react'
 import SlideSlider from '../Slider'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
 const PiliTour = () => {
   const [PData,setPData]=useState([])
 
@@ -80,9 +81,11 @@ Located in the mighty Trikuta Mountains at a distance of 60 kilometers from Jamm
 {
   PData.filter((pack)=>pack.heading.includes('Piligrimage Tours')).map((pack)=>(
     <div key={pack.id} className='CardWrapper'>
+<NavLink to={`/itp/${pack.id}`}>
 
       <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
+     </NavLink>
       </div>
   ))
 }

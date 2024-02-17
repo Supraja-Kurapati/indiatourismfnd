@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import SlideSlider from '../Slider'
 import { useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 const Adventure = () => {
   const location=useLocation()
@@ -67,9 +68,11 @@ India's coastal states are good for water sports during OCTOBER and MARCH. Goa i
 {
   PData.filter((pack)=>pack.heading.includes('Adventure Tours')).map((pack)=>(
     <div key={pack.id} className='CardWrapper'>
+<NavLink to={`/itp/${pack.id}`}>
 
       <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
+     </NavLink>
       </div>
   ))
 }

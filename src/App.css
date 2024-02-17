@@ -423,7 +423,20 @@ font-size: smaller;
   display: flex;
   flex-wrap: wrap;
 }
-
+.BannerWrapper{
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ContactUS{
+  width: 130px;
+  height: 70px;
+  background-color: brown;
+  border: 1px solid white;
+  border-radius: 20px;
+}
 
 /* MOBILE View------------ */
 @media screen and (min-width:350px) and (max-width:600px) {

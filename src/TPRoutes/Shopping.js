@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react'
 import axios from 'axios'
 import SlideSlider from '../Slider'
 import { useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 const Shopping = () => {
   const [PData,setPData]=useState([])
   const loc=useLocation()
@@ -58,9 +59,11 @@ Again, each region has its specialty. The range consists of exquisite bronzes, a
 {
   PData.filter((pack)=>pack.heading.includes('Golden Triangle Tours')).map((pack)=>(
     <div key={pack.id} className='CardWrapper'>
+<NavLink to={`/itp/${pack.id}`}>
 
       <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
+     </NavLink>
       </div>
   ))
 }

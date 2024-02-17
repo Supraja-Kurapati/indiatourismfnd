@@ -2,6 +2,7 @@ import React, { useEffect ,useState} from 'react'
 import SlideSlider from './../Slider'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
 const Solotour = () => {
   const [PData,setPData]=useState([])
 
@@ -46,9 +47,11 @@ Our women special luxury tours are suitable for women of all ages, from <a href=
 {
   PData.filter((pack)=>pack.heading.includes('Solo Woman India Tours')).map((pack)=>(
     <div key={pack.id} className='CardWrapper'>
+<NavLink to={`/itp/${pack.id}`}>
 
       <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
+     </NavLink>
       </div>
   ))
 }

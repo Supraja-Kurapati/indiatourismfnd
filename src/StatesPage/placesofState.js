@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { NavLink, useLocation, useParams } from 'react-router-dom'
 import axios from 'axios';
 import SlideSlider from '../Slider';
 const PlacesofState = () => {
@@ -67,9 +67,11 @@ const PlacesofState = () => {
 <div className='Dynamiccard'>
 {
     PData.map((place)=>item.heading===place.heading?(
+
      <div key={place.id} className='CardWrapper'>
+      <NavLink to={`/placesofstate/${place.id}`}>
      <img src={place.imagesrc} alt='Not Found' className='CardImgWrapper'/>
-      <h2 className='Font-vSmall'>{place.place}</h2>
+      <h2 className='Font-vSmall'>{place.place}</h2></NavLink>
  
 </div>
     ):null
