@@ -41,7 +41,7 @@ Golden triangle India welcome tourists to best of Indian Destinations that will 
   PData.filter((pack)=>pack.heading.includes('Golden Triangle Tours')).map((pack)=>(
     <div key={pack.id} className='CardWrapper'>
 <NavLink to={`/itp/${pack.id}`}>
-      <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
+      <img src={pack.img} alt={pack.img} className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
      </NavLink>
       </div>

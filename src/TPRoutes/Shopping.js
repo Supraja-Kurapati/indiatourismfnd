@@ -61,7 +61,7 @@ Again, each region has its specialty. The range consists of exquisite bronzes, a
     <div key={pack.id} className='CardWrapper'>
 <NavLink to={`/itp/${pack.id}`}>
 
-      <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
+      <img src={pack.img} alt={pack.img} className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
      </NavLink>
       </div>

@@ -70,7 +70,7 @@ India's coastal states are good for water sports during OCTOBER and MARCH. Goa i
     <div key={pack.id} className='CardWrapper'>
 <NavLink to={`/itp/${pack.id}`}>
 
-      <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
+      <img src={pack.img} alt={pack.img} className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
      </NavLink>
       </div>

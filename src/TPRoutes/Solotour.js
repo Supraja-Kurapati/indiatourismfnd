@@ -49,7 +49,7 @@ Our women special luxury tours are suitable for women of all ages, from <a href=
     <div key={pack.id} className='CardWrapper'>
 <NavLink to={`/itp/${pack.id}`}>
 
-      <img src={pack.img} alt='Not Found' className='CardImgWrapper'/>
+      <img src={pack.img} alt={pack.img} className='CardImgWrapper'/>
      <h2 className='Font-vSmall'> {pack.head}</h2>
      </NavLink>
       </div>
