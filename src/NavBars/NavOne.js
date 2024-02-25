@@ -9,6 +9,7 @@ const NavOne = () => {
   }
   const handleLogout=()=>{
     localStorage.removeItem('token')
+    
     navigate('/')
   }
   const checkToken=localStorage.getItem('token')

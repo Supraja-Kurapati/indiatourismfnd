@@ -74,14 +74,15 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
 
 
    <div className='CardWrapper'>
-    <NavLink to='/golden' target="_blank">
+    {/* <NavLink to='/golden' target="_blank"> */}
+    <NavLink to='/golden'>
    <img src='https://www.theindiatourism.com/images/golden-triangle-tours.jpg' alt='Not Found' className='CardImgWrapper'/>
    <h2 className='Font-vSmall'>Golden Triangle Tours</h2>
    </NavLink>
    </div>
    <div className='CardWrapper'>
-   <NavLink to='/shopping' target="_blank">
-
+   {/* <NavLink to='/shopping' target="_blank"> */}
+   <NavLink to='/shopping'>
    <img src='https://www.theindiatourism.com/images/India-Shopping-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
    <h2 className='Font-vSmall'>India Shopping Tours</h2>
    </NavLink></div>
@@ -100,7 +101,8 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
    </NavLink></div>
 
    <div className='CardWrapper'>
-    <NavLink to='/south' target="_blank">
+    {/* <NavLink to='/south' target="_blank"> */}
+    <NavLink to='/south'>
    <img src='https://www.theindiatourism.com/images/South-India-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
    <h2 className='Font-vSmall'>South India Tours</h2>
    </NavLink> </div>
@@ -112,7 +114,8 @@ Travel in India is like nothing you’ve ever experienced, from the magnificence
    </NavLink></div>
 
    <div className='CardWrapper'>
-   <NavLink to='/solo' target="_blank">
+   {/* <NavLink to='/solo' target="_blank"> */}
+   <NavLink to='/solo'>
    <img src='https://www.theindiatourism.com/images/Solo-Woman-India-Tours.jpg' alt='Not Found' className='CardImgWrapper'/>
    <h2 className='Font-vSmall'>Solo Woman India Tours</h2>
    </NavLink></div>
